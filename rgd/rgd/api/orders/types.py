@@ -24,3 +24,8 @@ class Order:
     products: typing.List["Product"]
     total: Decimal
     status: str
+
+
+@strawberry.input
+class UpdateOrderStatusInput:
+    status: str

@@ -1,6 +1,6 @@
 import strawberry
 from django.contrib.auth import get_user_model
-from .types import Order, Product
+from .types import Order, Product, UpdateOrderStatusInput
 
 from rgd.carts.models import Cart
 
@@ -50,3 +50,8 @@ def get_orders_for_user(id: strawberry.ID):
 
 def get_open_orders():
     return [compile_order(cart) for cart in Cart.open.all()]
+
+
+def update_order_status(id: strawberry.ID, input: UpdateOrderStatusInput):
+    Cart.objects.filter(id=id).update(status=input.status)
+    return get_order(id)

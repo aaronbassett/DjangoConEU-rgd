@@ -7,6 +7,7 @@ from .orders.resolvers import (
     get_orders,
     get_orders_for_user,
     get_open_orders,
+    update_order_status,
 )
 from .orders.types import Order
 
@@ -19,4 +20,11 @@ class Query:
     open_orders: list[Order] = strawberry.field(resolver=get_open_orders)
 
 
-schema = strawberry.Schema(Query)
+@strawberry.type
+class Mutation:
+    update_order_status: Optional[Order] = strawberry.mutation(
+        resolver=update_order_status
+    )
+
+
+schema = strawberry.Schema(Query, Mutation)

@@ -71,11 +71,15 @@ THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
     "allauth.socialaccount",
+    "localflavor",
+    "djmoney",
 ]
 
 LOCAL_APPS = [
     "rgd.users.apps.UsersConfig",
-    # Your stuff: custom apps go here
+    "rgd.addresses.apps.AddressesConfig",
+    "rgd.products.apps.ProductsConfig",
+    "rgd.carts.apps.CartsConfig",
 ]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS

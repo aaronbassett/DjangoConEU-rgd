@@ -41,7 +41,7 @@ def get_order(id: strawberry.ID):
 
 
 def get_orders():
-    return [compile_order(cart) for cart in Cart.objects.all()]
+    return [compile_order(cart) for cart in Cart.objects.all().order_by("id")]
 
 
 def get_orders_for_user(id: strawberry.ID):

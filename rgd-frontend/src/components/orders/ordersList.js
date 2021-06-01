@@ -7,13 +7,9 @@ import { useEffect } from "react"
 import { useQuery } from "@apollo/client"
 
 function OrdersList(props) {
-  const { loading, error, data } = useQuery(GQL_ALL_ORDERS)
-
-  useEffect(() => {
-    console.log("Loading:", loading)
-    console.log("Error:", error)
-    console.log("Orders:", data)
-  }, [data, loading, error])
+  const { loading, error, data } = useQuery(GQL_ALL_ORDERS, {
+    pollInterval: 500,
+  })
 
   return loading ? (
     <Row gutter={16}>

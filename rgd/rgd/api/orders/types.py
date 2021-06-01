@@ -17,6 +17,7 @@ class Product:
 @strawberry.type
 class Order:
     id: strawberry.ID
+    userId: strawberry.ID
     name: str
     street: str
     state: str

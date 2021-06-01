@@ -25,6 +25,7 @@ def compile_order(cart):
 
     return Order(
         id=cart.id,
+        userId=cart.shopper.id,
         name=cart.address.name,
         street=cart.address.street,
         state=cart.address.state,

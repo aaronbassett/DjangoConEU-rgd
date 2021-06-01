@@ -21,3 +21,4 @@ django-money==2.0  # https://github.com/django-money/django-money
 # GraphQL
 # ------------------------------------------------------------------------------
 strawberry-graphql[debug-server]==0.64.5  # https://strawberry.rocks/
+django-cors-headers==3.7.0  # https://github.com/adamchainz/django-cors-headers

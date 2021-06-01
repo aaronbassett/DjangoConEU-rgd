@@ -18,5 +18,4 @@ const GQL_ALL_ORDERS = gql`
     }
   }
 `
-
 export { GQL_ALL_ORDERS }

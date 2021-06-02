@@ -1,4 +1,4 @@
-import { Col, Row, Skeleton, Spin } from "antd"
+import { Col, Divider, Row, Skeleton, Spin } from "antd"
 
 import { GQL_ALL_ORDERS } from "./queries"
 import OrderCard from "./orderCard"
@@ -23,18 +23,22 @@ function OrdersList(props) {
     <>
       {_.chunk(data.orders, 3).map((ordersRow) => {
         return (
-          <Row gutter={16}>
-            {ordersRow.map((order) => {
-              return (
-                <Col span={8}>
-                  <OrderCard
-                    order={order}
-                    showOrdersDrawerForUser={props.showOrdersDrawerForUser}
-                  />
-                </Col>
-              )
-            })}
-          </Row>
+          <>
+            <Row gutter={16}>
+              {ordersRow.map((order) => {
+                return (
+                  <Col span={8}>
+                    <OrderCard
+                      order={order}
+                      showOrdersDrawerForUser={props.showOrdersDrawerForUser}
+                    />
+                  </Col>
+                )
+              })}
+            </Row>
+
+            <Divider />
+          </>
         )
       })}
     </>
